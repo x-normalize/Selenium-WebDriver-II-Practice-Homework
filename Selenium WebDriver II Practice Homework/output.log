@@ -1,0 +1,20 @@
+2023-09-12 20:46:27,842 INFO  [main] Initializing WebDriver
+2023-09-12 20:46:31,389 INFO  [main] Initializing WebDriver
+2023-09-12 20:46:31,393 INFO  [main] Initializing WebDriver
+2023-09-12 20:46:32,946 INFO  [main] Clicking on element jira.loginPage.loginButton
+2023-09-12 20:46:33,735 INFO  [main] Clicking on element jira.loginPage.loginButton
+2023-09-12 20:46:33,800 INFO  [main] Initializing WebDriver
+2023-09-12 20:46:48,846 INFO  [main] Clicking on element jira.homePage.clickOnStory
+2023-09-12 20:46:50,371 INFO  [main] Clicking on element jira.homePage.linkIssueButton
+2023-09-12 20:46:51,850 INFO  [main] Clicking on element jira.homePage.linkCreateButton
+2023-09-12 20:46:53,129 INFO  [main] Initializing WebDriver
+2023-09-12 20:46:53,144 INFO  [main] Clicking on element jira.projectMenu
+2023-09-12 20:46:53,348 INFO  [main] Clicking on element jira.viewAllProjects
+2023-09-12 20:46:54,506 INFO  [main] Clicking on element jira.moreOptions.trash
+2023-09-12 20:46:54,617 INFO  [main] Clicking on element jira.moveToTrash
+2023-09-12 20:46:55,254 INFO  [main] Clicking on element jira.moveToTrashButton
+2023-09-12 20:46:55,894 INFO  [main] Clicking on element jira.goToTrash
+2023-09-12 20:46:57,958 INFO  [main] Clicking on element jira.moreOptions
+2023-09-12 20:46:58,122 INFO  [main] Clicking on element jira.deleteOption
+2023-09-12 20:46:58,750 INFO  [main] Clicking on element jira.deleteButton
+2023-09-12 20:46:58,860 INFO  [main] Quitting WebDriver
