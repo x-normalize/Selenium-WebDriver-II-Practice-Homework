@@ -1,4 +1,4 @@
-# Selenium-WebDriver-II-Practice-Homewor
+# Selenium-WebDriver-II-Practice-Homework
 
 Selenium WebDriver II Practice Homework
 Use your free JIRA projects to practice testing with Selenium WebDriver and the provided Test Automation Framework.
