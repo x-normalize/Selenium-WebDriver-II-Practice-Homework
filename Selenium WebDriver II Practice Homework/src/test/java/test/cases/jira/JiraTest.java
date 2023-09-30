@@ -7,7 +7,6 @@ import pages.jira.JiraHomePage;
 
 public class JiraTest extends BaseTest{
 
-    // Please run the tests one by one. Thank you!
 
 
     //First Test
