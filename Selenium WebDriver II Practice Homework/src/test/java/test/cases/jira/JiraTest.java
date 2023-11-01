@@ -12,22 +12,18 @@ public class JiraTest extends BaseTest {
     public void createStoryInJira_when_homePageNavigated() throws InterruptedException {
         login();
 
-        JiraHomePage home = new JiraHomePage(actions.getDriver());
+        JiraHomePage.createProject("Draft123");
+        JiraHomePage.createJiraStory();
 
-        home.createProject("Draft123");
-        home.createJiraStory();
-
-        home.assertBugAndStoryCreationSuccess();
+        JiraHomePage.assertBugAndStoryCreationSuccess();
     }
 
     @Test
     public void createBugInJira_when_homePageNavigated() {
         login();
 
-        JiraHomePage homePage = new JiraHomePage(actions.getDriver());
-        homePage.createJiraBug();
-
-        homePage.assertBugAndStoryCreationSuccess();
+        JiraHomePage.createJiraBug();
+        JiraHomePage.assertBugAndStoryCreationSuccess();
 
     }
 
@@ -35,11 +31,10 @@ public class JiraTest extends BaseTest {
     public void linkBugToStory_when_homePageNavigated() {
         login();
 
-        JiraHomePage homePage = new JiraHomePage(actions.getDriver());
-        homePage.linkBugToStory();
+        JiraHomePage.linkBugToStory();
 
-        homePage.assertBugLinkToStory();
-        homePage.deleteProject();
+        JiraHomePage.assertBugLinkToStory();
+        JiraHomePage.deleteProject();
 
     }
 }

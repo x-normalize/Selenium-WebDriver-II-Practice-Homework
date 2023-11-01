@@ -8,8 +8,8 @@ import org.openqa.selenium.WebDriver;
 public abstract class BasePage {
 
     protected String url;
-    protected WebDriver driver;
-    public UserActions actions;
+    protected static WebDriver driver;
+    public static UserActions actions;
 
     public BasePage(WebDriver driver, String urlKey) {
         String pageUrl = Utils.getConfigPropertyByKey(urlKey);

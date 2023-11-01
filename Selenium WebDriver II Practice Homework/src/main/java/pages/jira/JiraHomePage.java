@@ -1,6 +1,5 @@
 package pages.jira;
 
-import com.telerikacademy.testframework.UserActions;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -11,8 +10,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static pages.jira.Constants.BUG_DESCRIPTION_FIELD;
-import static pages.jira.Constants.STORY_DESCRIPTION_FIELD;
+import static com.telerikacademy.testframework.UserActions.dropdownMenuSelectBug;
+import static pages.jira.Constants.*;
 
 public class JiraHomePage extends BaseJiraPage {
 
@@ -20,10 +19,7 @@ public class JiraHomePage extends BaseJiraPage {
         super(driver, "jira.homePages");
     }
 
-    public void createJiraStory() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-        String summaryField = "Allow Users to Reset Password via Email";
+    public static void createJiraStory() {
 
         try {
             Thread.sleep(10000);
@@ -35,7 +31,7 @@ public class JiraHomePage extends BaseJiraPage {
         actions.clickElement("jira.homePage.createButton");
 
         actions.waitForElementClickable("jira.homePage.summaryField");
-        actions.typeValueInField(summaryField, "jira.homePage.summaryField");
+        actions.typeValueInField(STORY_SUMMARY_FIELD, "jira.homePage.summaryField");
 
         actions.waitForElementClickable("jira.homePage.descriptionField");
         actions.typeValueInField(STORY_DESCRIPTION_FIELD, "jira.homePage.descriptionField");
@@ -45,24 +41,15 @@ public class JiraHomePage extends BaseJiraPage {
 
     }
 
-    public void createJiraBug() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-        String summaryField = "Password Reset via Email Functionality Issue";
+    public static void createJiraBug() {
 
         actions.waitForElementPresent("jira.homePage.createButton");
         actions.clickElement("jira.homePage.createButton");
 
-        WebElement dropdownMenuSelectBug = wait.until(ExpectedConditions.elementToBeClickable
-                (By.xpath("//*[@id='issue-create.ui.modal.create-form.type-picker.issue-type-select']/div")));
-        dropdownMenuSelectBug.click();
-
-        WebElement bugOption = wait.until(ExpectedConditions.elementToBeClickable
-                (By.xpath("//div[text()='Bug']")));
-        bugOption.click();
+        dropdownMenuSelectBug();
 
         actions.waitForElementClickable("jira.homePage.summaryField");
-        actions.typeValueInField(summaryField, "jira.homePage.summaryField");
+        actions.typeValueInField(BUG_SUMMARY_FIELD, "jira.homePage.summaryField");
 
         actions.waitForElementClickable("jira.homePage.descriptionField");
         actions.typeValueInField(BUG_DESCRIPTION_FIELD, "jira.homePage.descriptionField");
@@ -72,7 +59,8 @@ public class JiraHomePage extends BaseJiraPage {
 
     }
 
-    public void createProject(String projectName) throws InterruptedException {
+
+    public static void createProject(String projectName) throws InterruptedException {
 
         actions.waitForElementPresent("jira.homePage.createProjectButton");
         actions.clickElement("jira.homePage.createProjectButton");
@@ -107,7 +95,7 @@ public class JiraHomePage extends BaseJiraPage {
 
     }
 
-    public void linkBugToStory() {
+    public static void linkBugToStory() {
 
         try {
             Thread.sleep(15000);
@@ -134,9 +122,7 @@ public class JiraHomePage extends BaseJiraPage {
 
     }
 
-    public void deleteProject() {
-        UserActions actions = new UserActions();
-
+    public static void deleteProject() {
         actions.waitForElementPresent("jira.projectMenu");
         actions.clickElement("jira.projectMenu");
 
@@ -173,7 +159,7 @@ public class JiraHomePage extends BaseJiraPage {
     }
 
 
-    public void assertBugAndStoryCreationSuccess() {
+    public static void assertBugAndStoryCreationSuccess() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         WebElement viewIssueElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
@@ -181,11 +167,12 @@ public class JiraHomePage extends BaseJiraPage {
         Assert.assertTrue("Bug and Story creation was not successful.", viewIssueElement.isDisplayed());
     }
 
-    public void assertBugLinkToStory() {
+    public static void assertBugLinkToStory() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         WebElement linkElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-                "//span[contains(@data-testid, 'hover-card-trigger-wrapper')]/a[contains(@data-testid, 'issue-field-summary.ui.inline-read.link-item')]")));
+                "//span[contains(@data-testid, 'hover-card-trigger-wrapper')]/a[contains(@data-testid, " +
+                        "'issue-field-summary.ui.inline-read.link-item')]")));
         Assert.assertTrue("Bug is not linked to Story.", linkElement.isDisplayed());
     }
 

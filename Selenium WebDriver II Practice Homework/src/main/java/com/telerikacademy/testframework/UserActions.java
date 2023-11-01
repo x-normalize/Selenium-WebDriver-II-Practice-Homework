@@ -188,4 +188,16 @@ public class UserActions {
 
         return true;
     }
+
+    public static void dropdownMenuSelectBug() {
+        final WebDriver driver = getWebDriver();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement dropdownMenuSelectBug = wait.until(ExpectedConditions.elementToBeClickable
+                (By.xpath("//*[@id='issue-create.ui.modal.create-form.type-picker.issue-type-select']/div")));
+        dropdownMenuSelectBug.click();
+
+        WebElement bugOption = wait.until(ExpectedConditions.elementToBeClickable
+                (By.xpath("//div[text()='Bug']")));
+        bugOption.click();
+    }
 }
