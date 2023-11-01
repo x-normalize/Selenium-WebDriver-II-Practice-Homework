@@ -2,6 +2,7 @@ package pages.jira;
 
 public class Constants {
 
+    public static final String STORY_NAME = "D3-1";
     public static final String STORY_SUMMARY_FIELD = "Allow Users to Reset Password via Email";
     public static final String BUG_SUMMARY_FIELD = "Password Reset via Email Functionality Issue";
     public static final String STORY_DESCRIPTION_FIELD = "As a user in https://www.saucedemo.com/, I want to be able to reset my password " +

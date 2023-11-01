@@ -10,5 +10,4 @@ public abstract class BaseJiraPage extends BasePage {
     public BaseJiraPage(WebDriver driver, String urlKey) {
         super(driver, urlKey);
     }
-
 }

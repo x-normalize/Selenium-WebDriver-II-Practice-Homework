@@ -21,7 +21,7 @@ public class BaseTest {
 
     public void login() {
         JiraLoginPage loginPage = new JiraLoginPage(actions.getDriver());
-        loginPage.loginUser("user");
+        loginPage.loginUser();
     }
 
 

@@ -10,12 +10,13 @@ public class JiraLoginPage extends BaseJiraPage {
         super(driver, "jira.homePages");
     }
 
-    public void loginUser(String userKey) {
+    public void loginUser() {
 
         String username = getConfigPropertyByKey("jira.user.username");
         String password = getConfigPropertyByKey("jira.user.password");
 
         navigateToPage();
+        assertPageNavigated();
 
         actions.waitForElementClickable("jira.loginPage.username");
         actions.typeValueInField(username, "jira.loginPage.username");

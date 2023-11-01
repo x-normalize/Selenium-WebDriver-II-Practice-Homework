@@ -3,6 +3,8 @@ package test.cases.jira;
 
 import org.junit.Test;
 import pages.jira.JiraHomePage;
+import pages.jira.JiraLoginPage;
+import pages.trello.LoginPage;
 
 
 public class JiraTest extends BaseTest {
@@ -13,8 +15,8 @@ public class JiraTest extends BaseTest {
         login();
 
         JiraHomePage.createProject("Draft123");
-        JiraHomePage.createJiraStory();
 
+        JiraHomePage.createJiraStory();
         JiraHomePage.assertBugAndStoryCreationSuccess();
     }
 
@@ -32,8 +34,8 @@ public class JiraTest extends BaseTest {
         login();
 
         JiraHomePage.linkBugToStory();
-
         JiraHomePage.assertBugLinkToStory();
+
         JiraHomePage.deleteProject();
 
     }

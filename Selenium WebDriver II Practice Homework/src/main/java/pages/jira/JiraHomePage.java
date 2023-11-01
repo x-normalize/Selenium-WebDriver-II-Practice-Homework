@@ -103,8 +103,6 @@ public class JiraHomePage extends BaseJiraPage {
             e.printStackTrace();
         }
 
-        String storyName = "D3-1";
-
         actions.waitForElementPresent("jira.homePage.clickOnStory");
         actions.clickElement("jira.homePage.clickOnStory");
 
@@ -112,7 +110,7 @@ public class JiraHomePage extends BaseJiraPage {
         actions.clickElement("jira.homePage.linkIssueButton");
 
         actions.waitForElementPresent("jira.homePage.linkIssueSearchField");
-        actions.typeValueInField(storyName, "jira.homePage.linkIssueSearchField");
+        actions.typeValueInField(STORY_NAME, "jira.homePage.linkIssueSearchField");
 
         actions.waitForElementPresent("jira.homePage.linkIssueSearchField");
         actions.typeValueInField(String.valueOf(Keys.ENTER), "jira.homePage.linkIssueSearchField");

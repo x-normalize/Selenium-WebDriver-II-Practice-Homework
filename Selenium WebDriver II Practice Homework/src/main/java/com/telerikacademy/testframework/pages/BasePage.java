@@ -13,7 +13,7 @@ public abstract class BasePage {
 
     public BasePage(WebDriver driver, String urlKey) {
         String pageUrl = Utils.getConfigPropertyByKey(urlKey);
-        this.driver = driver;
+        BasePage.driver = driver;
         this.url = pageUrl;
         actions = new UserActions();
     }
@@ -23,7 +23,7 @@ public abstract class BasePage {
     }
 
     public void navigateToPage() {
-        this.driver.get(url);
+        driver.get(url);
     }
 
     public void assertPageNavigated() {
