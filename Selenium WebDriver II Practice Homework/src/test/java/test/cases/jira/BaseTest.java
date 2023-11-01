@@ -5,7 +5,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import pages.jira.JiraLoginPage;
 
-public class  BaseTest{
+public class BaseTest {
 
     UserActions actions = new UserActions();
 

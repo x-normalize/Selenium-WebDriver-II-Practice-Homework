@@ -5,11 +5,9 @@ import org.junit.Test;
 import pages.jira.JiraHomePage;
 
 
-public class JiraTest extends BaseTest{
+public class JiraTest extends BaseTest {
 
 
-
-    //First Test
     @Test
     public void createStoryInJira_when_homePageNavigated() throws InterruptedException {
         login();
@@ -22,7 +20,6 @@ public class JiraTest extends BaseTest{
         home.assertBugAndStoryCreationSuccess();
     }
 
-    //Second Test
     @Test
     public void createBugInJira_when_homePageNavigated() {
         login();
@@ -34,7 +31,6 @@ public class JiraTest extends BaseTest{
 
     }
 
-    //Third Test
     @Test
     public void linkBugToStory_when_homePageNavigated() {
         login();
