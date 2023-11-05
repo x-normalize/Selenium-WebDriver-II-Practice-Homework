@@ -5,6 +5,9 @@ public class Constants {
     public static final String STORY_NAME = "D3-1";
     public static final String STORY_SUMMARY_FIELD = "Allow Users to Reset Password via Email";
     public static final String BUG_SUMMARY_FIELD = "Password Reset via Email Functionality Issue";
+    public static final String VIEW_ISSUE_TEXT = "//a[contains(@class, 'css-14bz9j0') and contains(span, 'View issue')]";
+    public static final String HOVER_CARD_TRIGGER = "//span[contains(@data-testid, 'hover-card-trigger-wrapper')]/a[contains(@data-testid, ";
+    public static final String ISSUE_FIELD_SUMMAR = "'issue-field-summary.ui.inline-read.link-item')]";
     public static final String STORY_DESCRIPTION_FIELD = "As a user in https://www.saucedemo.com/, I want to be able to reset my password " +
             "via email if I forget it, so I can regain access to my account. " +
             "This feature will provide a secure and convenient way for users to reset " +

@@ -161,7 +161,7 @@ public class JiraHomePage extends BaseJiraPage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         WebElement viewIssueElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-                "//a[contains(@class, 'css-14bz9j0') and contains(span, 'View issue')]")));
+                VIEW_ISSUE_TEXT)));
         Assert.assertTrue("Bug and Story creation was not successful.", viewIssueElement.isDisplayed());
     }
 
@@ -169,8 +169,8 @@ public class JiraHomePage extends BaseJiraPage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         WebElement linkElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-                "//span[contains(@data-testid, 'hover-card-trigger-wrapper')]/a[contains(@data-testid, " +
-                        "'issue-field-summary.ui.inline-read.link-item')]")));
+                HOVER_CARD_TRIGGER +
+                        ISSUE_FIELD_SUMMAR)));
         Assert.assertTrue("Bug is not linked to Story.", linkElement.isDisplayed());
     }
 
