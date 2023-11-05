@@ -21,12 +21,6 @@ public class JiraHomePage extends BaseJiraPage {
 
     public static void createJiraStory() {
 
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         actions.waitForElementPresent("jira.homePage.createButton");
         actions.clickElement("jira.homePage.createButton");
 
@@ -96,12 +90,6 @@ public class JiraHomePage extends BaseJiraPage {
     }
 
     public static void linkBugToStory() {
-
-        try {
-            Thread.sleep(15000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
         actions.waitForElementPresent("jira.homePage.clickOnStory");
         actions.clickElement("jira.homePage.clickOnStory");
