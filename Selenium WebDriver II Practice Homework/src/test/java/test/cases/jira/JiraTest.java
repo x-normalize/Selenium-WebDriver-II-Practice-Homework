@@ -3,8 +3,6 @@ package test.cases.jira;
 
 import org.junit.Test;
 import pages.jira.JiraHomePage;
-import pages.jira.JiraLoginPage;
-import pages.trello.LoginPage;
 
 
 public class JiraTest extends BaseTest {
